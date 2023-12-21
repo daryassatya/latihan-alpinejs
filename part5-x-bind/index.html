@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-bind</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- x-bind memungkinkan Anda menyetel atribut HTML pada elemen berdasarkan hasil ekspresi JavaScript. -->
+
+    <!-- Misalnya, inilah komponen yang akan kita gunakan x-binduntuk mengatur nilai placeholder dari sebuah input. -->
+    <div x-data="{ textPlaceholder: 'Type here...' }">
+        <input type="text" x-bind:placeholder="textPlaceholder">
+    </div>
+
+    <!-- Kelas yang mengikat
+    x-bind paling sering berguna untuk menetapkan kelas tertentu pada elemen berdasarkan negara bagian Alpine Anda.
+
+    Berikut adalah contoh sederhana dari tombol dropdown sederhana, namun alih-alih menggunakan x-show, kita akan menggunakan kelas "tersembunyi" untuk mengaktifkan elemen. -->
+    <div x-data="{ open: false }">
+        <button x-on:click="open = ! open">Toggle Dropdown</button>
+     
+        <div :class="open ? '' : 'hidden'">
+            Dropdown Contents...
+        </div>
+    </div>
+</body>
+</html>

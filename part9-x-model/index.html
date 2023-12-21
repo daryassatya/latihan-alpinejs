@@ -1,0 +1,47 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-model</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <!-- Contoh x-model -->
+<div x-data="{ inputName: '', inputKelamin: '', inputKota: [], alamat: '' }">
+    <label for="nama">Nama: </label>
+    <input type="text" name="" id="nama" x-model="inputName">
+    <span x-text="inputName"></span>
+
+    <br>
+    <br>
+
+    <label for="">Jenis Kelamin: </label>
+    <input type="radio" name="" id="jenisKelamin" x-model="inputKelamin" value="laki-laki">
+    <input type="radio" name="" id="jenisKelamin" x-model="inputKelamin" value="perempuan">
+
+    <br>
+    <span x-text="inputKelamin"></span>
+    <br>
+    <br>
+
+    <label for="">Kota: </label>
+    <input type="checkbox" id="kotaBekasi" x-model="inputKota" value="Bekasi">Bekasi
+    <input type="checkbox" id="kotaJakarta" x-model="inputKota" value="Jakarta">Jakarta
+    <input type="checkbox" id="kotaBandung" x-model="inputKota" value="Bandung">Bandung
+    <br>
+    <span x-text="inputKota"></span>
+    <br>
+    <br>
+
+    <label for="">Alamat</label>
+    <br>
+    <textarea name="" id="" cols="30" rows="10" x-model="alamat"></textarea>
+    <span x-text="alamat"></span>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-on</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <!-- Penggunaannya bertujuan untuk trigger evenet DOM pada halaman HTML -->
+
+    <!-- Contoh sederhana penggunaan x-on:click -->
+    <div x-data="{ pesan: 'Hello World' }">
+        <button x-on:click="alert(pesan)">TEKAN!</button>
+    </div>
+    <br><br><br>
+    <!-- Contoh shorthand -->
+    <div x-data="{ pesan: 'Short Hand!' }">
+        <button @click="alert(pesan)">Tekan SHORTHAND!</button>
+    </div>
+    <br><br><br>
+    <div x-data @foo="alert('Button Was Clicked!')">
+        <button @click="$event.target.dispatchEvent(new CustomEvent('foo', { bubbles: true }))">...</button>
+    </div>
+
+</body>
+</html>

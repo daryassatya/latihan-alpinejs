@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-data</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ counter:0 }">
+
+        <!-- Scopenya berdasarkan parent element -->
+        <div x-data="{ pesan:'Hello World' }">
+            <h2 x-text="pesan"></h2>
+        </div>
+
+        <!-- Tidak dapat mengakses diluar scope -->
+        <h2 x-text="pesan"></h2>
+
+
+        <button x-on:click="counter++">+</button>
+        <h3 x-text="counter"></h3>
+
+        <hr style="margin: 20px 0;">
+
+        <!-- Buat data dan eksekusi dalam satu element -->
+        <button x-data="{ data:'Kamu memencet tombol!', showAlert(){alert(this.data)} }" x-on:click="showAlert()">Tampilkan Alert</button>
+
+    </div>
+</body>
+</html>

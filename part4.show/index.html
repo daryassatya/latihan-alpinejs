@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-show</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+
+    <div x-data="{ showMessage: true }">
+        <h3 x-show="showMessage">HELLO WORLDS</h3>
+    </div>
+
+    <!-- Menggunakan important -->
+    <div x-data="{ showMessage: false }">
+        <h3 x-show.important="showMessage">HELLO WORLDS</h3>
+    </div>
+
+    <!-- Menggunakan Transisi -->
+    <div x-data="{ open: false }">
+        <button x-on:click="open = ! open">Toggle Dropdown</button>
+     <br><br>
+        <div x-show="open" x-transition>
+            Dropdown Contents...
+        </div>
+    </div>
+
+    
+</body>
+</html>
